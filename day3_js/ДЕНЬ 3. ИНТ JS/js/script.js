@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	let buttons = document.getElementsByTagName('button');
 	let open = document.getElementsByClassName('open')[0];
 
-	function createCart() {
+	(function createCart() {
 		let cart = document.createElement('div');
 		let field = document.createElement('div');
 		let heading = document.createElement('h2');
@@ -20,10 +20,8 @@ window.addEventListener('DOMContentLoaded', function() {
 		cart.appendChild(heading);
 		cart.appendChild(field);
 		cart.appendChild(btnClose);
+	}());
 
-	}
-
-	createCart();
 
 	let field = document.querySelector('.cart-field');
 	let cart = document.querySelector('.cart');
@@ -51,5 +49,5 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	open.addEventListener('click', openCart);
 	btnClose.addEventListener('click', closeCart);
-
+	// доп задание закину чуть позже
 });
