@@ -27,15 +27,16 @@ window.addEventListener('DOMContentLoaded', function() {
 	let cart = document.querySelector('.cart');
 	let btnClose = document.querySelector('.close');
 
-	for(let i = 0; i < buttons.length; ++i) {
+	let item;
+	let btn;
+	for(let i = 0; i < buttons.length - 1; ++i) {
 		buttons[i].addEventListener('click', function() {
-			let item = products[i].cloneNode(true);
-			let btn = item.querySelector('button');
-
-			btn.remove();
+			item = products[i].cloneNode(true);
+			btn = item.querySelector('button');
+			btn.textContent = 'Удалить';
+			//btn.remove();
 			field.appendChild(item);
 			products[i].remove();
-
 		})
 	}
 
@@ -47,7 +48,12 @@ window.addEventListener('DOMContentLoaded', function() {
 		cart.style.display = 'none';
 	};
 
+	for(let i = 0; i < buttons.length; ++i) {
+
+	}
+
 	open.addEventListener('click', openCart);
 	btnClose.addEventListener('click', closeCart);
+
 	// доп задание закину чуть позже
 });
